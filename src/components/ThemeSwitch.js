@@ -13,7 +13,7 @@ const ThemeSwitch = () => {
 
   return (
     <div
-      className="p-6 bg-indigo-800 absolute top-0 right-24 rounded-xl rounded-t-none shadow-md animate-bounce hover:animate-none hover:cursor-pointer"
+      className="p-6 bg-indigo-800 absolute top-0 right-5 md:right-24 rounded-xl rounded-t-none shadow-md animate-bounce hover:animate-none hover:cursor-pointer"
       onClick={handleTheme}
     >
       <span className="text-amber-300">

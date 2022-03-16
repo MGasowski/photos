@@ -33,7 +33,7 @@ const MyImage = (props) => {
 
       <div className="m-4 h-full">
         <img
-          className="hover:scale-105 transition-transform  shadow-lg rounded-xl  max-h-full"
+          className="hover:scale-105 transition-transform hover:cursor-pointer shadow-lg rounded-xl  max-h-full"
           src={`http://source.unsplash.com/${props.slug}`}
           alt={props.alt}
           onClick={handleModal}
