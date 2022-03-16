@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { PageContext } from "../PageContext";
 import MyImage from "./Image";
 
-const Gallery = (props) => {
+const Gallery = () => {
   const [urls, setUrls] = useState();
   const { page } = useContext(PageContext);
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,6 @@ const Gallery = (props) => {
       await axios
         .get(`https://picsum.photos/v2/list?limit=3&page=${page}`)
         .then(({ data }) => {
-          // const slugs = data.map((e) => e.url.split("/").pop());
           setUrls(data);
           setLoading(false);
         });
