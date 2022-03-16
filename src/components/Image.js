@@ -14,14 +14,14 @@ const MyImage = (props) => {
     };
   }, [props.slug]);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <Skeleton height={props.height} width={props.width} />;
 
   return (
     <>
       <div
         className={`${
           modal ? "" : "hidden"
-        } overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50  flex justify-center items-center h-modal md:h-full md:inset-0 backdrop-blur-md`}
+        } overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 flex justify-center items-center h-modal md:h-full md:inset-0 backdrop-blur-md`}
         onClick={handleModal}
       >
         <img
@@ -30,6 +30,7 @@ const MyImage = (props) => {
           alt={props.alt}
         />
       </div>
+
       <div className="m-4 h-full">
         <img
           className="hover:scale-105 transition-transform  shadow-lg rounded-xl  max-h-full"

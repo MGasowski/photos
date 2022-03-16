@@ -1,6 +1,6 @@
-const Skeleton = () => {
+const Skeleton = (props) => {
   return (
-    <div className="animate-pulse w-1/3 bg-gray-500 mx-4 h-full rounded-lg"></div>
+    <div className="animate-pulse  bg-gray-500 rounded-lg w-1/3 m-4 h-full"></div>
   );
 };
 export default Skeleton;

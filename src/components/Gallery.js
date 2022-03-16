@@ -14,8 +14,8 @@ const Gallery = (props) => {
       await axios
         .get(`https://picsum.photos/v2/list?limit=3&page=${page}`)
         .then(({ data }) => {
-          const slugs = data.map((e) => e.url.split("/").pop());
-          setUrls(slugs);
+          // const slugs = data.map((e) => e.url.split("/").pop());
+          setUrls(data);
           setLoading(false);
         });
     };
@@ -26,9 +26,16 @@ const Gallery = (props) => {
   if (loading || !urls) return "Loading...";
 
   return (
-    <div className="flex justify-center  items-center h-2/3 mb-6  ">
+    <div className="flex flex-col md:flex-row md:justify-center items-center h-2/3   mb-6  overflow-scroll md:overflow-hidden pt-4">
+      {console.log(urls)}
       {urls.map((el) => (
-        <MyImage slug={el} key={el} alt={el} />
+        <MyImage
+          slug={el.url.split("/").pop()}
+          key={el.id}
+          alt={el.author}
+          width={el.width}
+          height={el.height}
+        />
       ))}
     </div>
   );
