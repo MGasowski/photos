@@ -26,7 +26,6 @@ const Gallery = () => {
 
   return (
     <div className="flex flex-col md:flex-row md:justify-center items-center h-2/3   mb-6  overflow-scroll md:overflow-hidden pt-4">
-      {console.log(urls)}
       {urls.map((el) => (
         <MyImage
           slug={el.url.split("/").pop()}
